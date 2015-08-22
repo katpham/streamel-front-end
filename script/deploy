@@ -1,0 +1,10 @@
+#!/bin/sh
+ 
+ssh app@APP.SERVER.IP.ADDRESS <<EOF
+  cd ~/streamel-front-end
+  git pull origin master
+  npm install
+  npm run build
+  pm2 restart front-end
+  exit
+EOF
