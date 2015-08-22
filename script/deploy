@@ -1,6 +1,6 @@
 #!/bin/sh
  
-ssh app@APP.SERVER.IP.ADDRESS <<EOF
+ssh app@45.55.184.223 <<EOF
   cd ~/streamel-front-end
   git pull origin master
   npm install
