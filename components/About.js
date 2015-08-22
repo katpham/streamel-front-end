@@ -5,7 +5,7 @@ var About = React.createClass({
         return (
             <div>
                 <h2>About</h2>
-                <p>This is a description of the site.</p>
+                <p>Streamel is a streaming channel.</p>
             </div>
         );
     }
