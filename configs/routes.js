@@ -12,5 +12,13 @@ module.exports = {
         page: 'about',
         title: 'About',
         handler: require('../components/About')
+    },
+    watch: {
+        path: '/watch',
+        method: 'get',
+        page: 'watch',
+        title: 'Watch',
+        handler: require('../components/Watch'),
+        action: require('../actions/getPlayerConfig')
     }
 };

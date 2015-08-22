@@ -1,0 +1,45 @@
+/*
+	Styles for the video player
+*/
+
+/*
+	To have the video take a fixed aspect
+	ratio defined by the containing div
+*/
+video {
+	object-fit: inherit;
+}
+
+.video-player-container {
+	position: relative;
+	width: 640px;
+	height: 365px;
+}
+
+.video-player {
+	
+}
+
+.video-player-controls {
+	position: absolute;
+	width: 100%;
+	top: 90%;
+}
+
+.seek-bar {
+	height: 3px;
+	background-color: #717171;
+}
+
+.seek-bar:hover {
+	cursor: pointer;
+	height: 5px;
+}
+
+.seek-bar-lower {
+	margin: auto;
+	margin-left: 0;
+	background-color: #0099FF;
+	width: 40%;
+	height: 100%;
+}
