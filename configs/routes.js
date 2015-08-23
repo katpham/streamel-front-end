@@ -12,5 +12,12 @@ module.exports = {
         page: 'about',
         title: 'About',
         handler: require('../components/About')
+    },
+    upload: {
+        path: '/upload',
+        method: 'get',
+        page: 'upload',
+        title: 'Upload',
+        handler: require('../components/Upload')
     }
 };
