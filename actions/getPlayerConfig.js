@@ -4,7 +4,7 @@ module.exports = function(context, payload, callback) {
     var videos = [{
         id: "1",
         name: "TEMP",
-        url: "/public/TEMP.mp4",
+        url: "http://videos.streamel.com/test.mp4",
         type: "video/mp4"
     }];
 

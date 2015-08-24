@@ -1,0 +1,22 @@
+body {
+	margin: 0;
+}
+
+.streamel-navbar {
+	display: flex;
+	justify-content: center;
+}
+
+.streamel-searchbar {
+
+}
+
+.streamel-search-input {
+	width: 55%;
+	height: 25px;
+}
+
+.streamel-search-button {
+	height: 25px;
+	width: 80px;
+}
