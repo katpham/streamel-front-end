@@ -6,12 +6,12 @@ var Upload = React.createClass({
         executeAction: React.PropTypes.func.isRequired  
     },  
     handleSubmit: function(element) {  
-        console.log("here");
         element.preventDefault();
         try {
             var payload = {
                 password: React.findDOMNode(this.refs.password).value.trim(),
-                json: JSON.parse(React.findDOMNode(this.refs.json).value.trim())
+                json: JSON.parse(React.findDOMNode(this.refs.json).value.trim()),
+                files: React.findDOMNode(this.refs.files).files
             }
         } catch(err) {
             alert("Probably invalid JSON");
@@ -30,6 +30,10 @@ var Upload = React.createClass({
                     <p>
                         JSON:
                         <textarea ref="json" />
+                    </p>
+                    <p>
+                        Upload your videos:
+                        <input type="file" ref="files" name="videos[]" multiple />
                     </p>
                     <p>
                         <input type="submit" value="Submit" />

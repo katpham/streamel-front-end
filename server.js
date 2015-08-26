@@ -16,13 +16,22 @@ var app = require('./app');
 var HtmlComponent = require('./components/Html');
 var { createElementWithContext } = require('fluxible-addons-react');
 var htmlComponent = React.createFactory(HtmlComponent);
+var multer = require('multer');
+var upload = multer({});
+var bodyParser = require('body-parser');
 var env = process.env.NODE_ENV;
 
 var debug = debugLib('fluxible-template');
 
+/* Regeister Services */
+
 var server = express();
 server.use('/public', express.static(path.join(__dirname, '/public')));
 server.use(compression());
+server.use(bodyParser());
+
+/* Register http actions */
+server.post('/api/upload', require('./httpActions/upload.js'));
 
 server.use(function(req, res, next) {
     var context = app.createContext();
