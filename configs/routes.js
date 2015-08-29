@@ -4,20 +4,21 @@ module.exports = {
         method: 'get',
         page: 'home',
         title: 'Home',
-        handler: require('../components/Home')
-    },
-    about: {
-        path: '/about',
-        method: 'get',
-        page: 'about',
-        title: 'About',
-        handler: require('../components/About')
+        handler: require('../components/home/Home')
     },
     upload: {
         path: '/upload',
         method: 'get',
         page: 'upload',
         title: 'Upload',
-        handler: require('../components/Upload')
+        handler: require('../components/upload/Upload')
+    },
+    watch: {
+        path: '/watch',
+        method: 'get',
+        page: 'watch',
+        title: 'Watch',
+        handler: require('../components/watch/Watch'),
+        action: require('../actions/getPlayerConfig')
     }
 };

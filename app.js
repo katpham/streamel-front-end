@@ -2,6 +2,7 @@ var Fluxible = require('fluxible');
 var Application = require('./components/Application');
 var ApplicationStore = require('./stores/ApplicationStore');
 var RouteStore = require('./stores/RouteStore');
+var PlayStore = require('./stores/PlayStore');
 
 var fetchr = require('fluxible-plugin-fetchr');
 var fetchrInstance = fetchr({
@@ -18,5 +19,6 @@ app.plug(fetchrInstance);
 // register stores
 app.registerStore(RouteStore);
 app.registerStore(ApplicationStore);
+app.registerStore(PlayStore);
 
 module.exports = app;
