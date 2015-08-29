@@ -1,11 +1,66 @@
+
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,700,400);
+
+html {
+    height: 100%; 
+    margin: 0px; 
+    padding: 0px;
+}
 body {
-	margin: 0;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #111;
+    -webkit-appearance:none;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.streamel-navbar {
-	display: flex;
-	justify-content: center;
+.streamel-site-container {
+    position: relative;
+    bottom 0px;
+    background-color: #DDD;
 }
+
+/* Header */
+.streamel-header {
+    position: relative;
+    background-color: #111;
+    height: 70px;
+    z-index: 100;
+	display: flex;
+    color: #EEE;
+    justify-content: space-between;
+}
+.streamel-header-item {
+    background-color: green;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Content */
+.streamel-content {
+    position: relative;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+/* Footer */
+.o-site-footer {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: -100px;
+    height: 100px;
+    background-color: #111;
+    box-sizing: border-box;
+    padding: 30px;
+    color: #EEE;
+    z-index: 100;
+}
+
+
+
 
 .streamel-searchbar {
 
