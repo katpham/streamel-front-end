@@ -74,6 +74,11 @@ h1 {
     z-index: 100;
 }
 
+/* Search Bar */
+.streamel-search-bar {
+    width: 500px !important;
+    margin-top: 12px !important;
+}
 
 
 
