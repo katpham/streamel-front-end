@@ -1,0 +1,23 @@
+/* Utility */
+.clear {
+    clear: both;
+}
+
+/* Circle Button */
+.o-circle-button {
+    width: 100px;
+    height: 100px;
+    background-color: #CCC;
+    border-radius: 50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color: #111;
+    cursor: pointer;
+    transition: all 0.05s ease-in;
+    transition-property: color, background-color;
+}
+.o-circle-button:hover {
+    color: #EEE;
+    background-color: #333;
+}
