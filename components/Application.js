@@ -1,7 +1,8 @@
 /*globals document*/
 
 var React = require('react');
-var NavBar = require('./NavBar');
+var Header = require('./Header');
+var Footer = require('./Footer');
 var ApplicationStore = require('../stores/ApplicationStore');
 var connectToStores = require("fluxible-addons-react").connectToStores;
 var provideContext = require('fluxible-addons-react').provideContext;
@@ -12,9 +13,12 @@ var Application = React.createClass({
         var Handler = this.props.currentRoute.get('handler');
 
         return (
-            <div>
-                <NavBar selected={this.props.currentPageName} links={this.props.pages} />
-                <Handler />
+            <div className="streamel-site-container">
+                <Header />
+                <div className="streamel-content">
+                    <Handler />
+                </div>
+                <Footer />
             </div>
         );
     },
