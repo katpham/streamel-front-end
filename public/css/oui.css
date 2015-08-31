@@ -43,5 +43,5 @@ input[type="text"] {
 }
 input[type="text"]:focus {
   outline: none;
-  border-bottom: #666 3px solid;
+  border-bottom: #555 3px solid;
 }

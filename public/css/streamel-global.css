@@ -102,6 +102,27 @@ h1 {
     font-size: 60px;
 }
 
+/* Search */
+.streamel-search-content {
+    position: relative;
+    min-height: 700px;
+    padding: 20px;
+}
+
+.streamel-search-item {
+    background-color: #EEE;
+    position: relative;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    max-width: 1200px;
+    padding: 20px;
+    height: 200px;
+    padding-right: 100px;
+    padding-left: 100px;
+    border-radius: 100px;
+    box-sizing: border-box;
+}
 
 
 

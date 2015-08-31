@@ -22,6 +22,7 @@
     "fluxible": "^0.5.0",
     "fluxible-addons-react": "^0.1.6",
     "fluxible-app": "^0.1.5",
+    "fluxible-plugin-action-monitor": "^1.0.1",
     "fluxible-plugin-fetchr": "^0.3.0",
     "fluxible-router": "^0.2.0",
     "multer": "^1.0.3",

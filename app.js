@@ -3,6 +3,7 @@ var Application = require('./components/Application');
 var ApplicationStore = require('./stores/ApplicationStore');
 var RouteStore = require('./stores/RouteStore');
 var PlayStore = require('./stores/PlayStore');
+var SearchStore = require('./stores/SearchStore');
 var actionMonitor = require('fluxible-plugin-action-monitor');
 
 var fetchr = require('fluxible-plugin-fetchr');
@@ -22,6 +23,7 @@ app.plug(fetchrInstance);
 app.registerStore(RouteStore);
 app.registerStore(ApplicationStore);
 app.registerStore(PlayStore);
+app.registerStore(SearchStore);
 
 app.registerStore(actionMonitor.actionMonitorStore);
 

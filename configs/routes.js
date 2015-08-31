@@ -20,5 +20,13 @@ module.exports = {
         title: 'Watch',
         handler: require('../components/watch/Watch'),
         action: require('../actions/getPlayerConfig')
+    },
+    search: {
+        path: '/search',
+        method: 'get',
+        page: 'search',
+        title: 'Search',
+        handler: require('../components/srp/Srp'),
+        action: require('../actions/searchFromUrlAction')
     }
 };
