@@ -4,13 +4,16 @@ module.exports = function (context, payload, callback) {
     var formData = new FormData();
 
     for (var i = 0; i < payload.files.length; i++) {
-        formData.append('videos[]', payload.files[i], payload.files[i].name);
+        formData.append('videos', payload.files[i], payload.files[i].name);
     }
+
 
     request
         .post('/api/upload')
         .type('form')
         .send(formData)
+        .send(payload.json)
+        .set('password', payload.password)
         .end(function(err, res) {
             console.log("error");
             console.log(err);

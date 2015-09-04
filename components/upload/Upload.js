@@ -6,7 +6,7 @@ var Upload = React.createClass({
         executeAction: React.PropTypes.func.isRequired  
     },  
     handleSubmit: function(element) {  
-        /*element.preventDefault();
+        element.preventDefault();
         try {
             var payload = {
                 password: React.findDOMNode(this.refs.password).value.trim(),
@@ -16,13 +16,13 @@ var Upload = React.createClass({
         } catch(err) {
             alert("Probably invalid JSON");
         }
-        this.context.executeAction(uploadAction, payload);*/
+        this.context.executeAction(uploadAction, payload);
     },
     render: function() {
         return (
             <div>
                 <h2>The Jank Upload Form!</h2>
-                <form onSubmit={this.handleSubmit} name="upload" method="post" action="/api/upload" encType="multipart/form-data">
+                <form onSubmit={this.handleSubmit}>
                     <p>
                         Password:
                         <input type="text" ref="password" />
