@@ -28,10 +28,27 @@ var debug = debugLib('fluxible-template');
 var server = express();
 server.use('/public', express.static(path.join(__dirname, '/public')));
 server.use(compression());
-server.use(bodyParser());
+
+
+
+
+
+
+
 
 /* Register http actions */
+/* TODO: THIS SHOULD NOT BE ON THE FRONT END. SHOULD MOVE TO BACK END */
 server.post('/api/upload', require('./httpActions/upload.js'));
+/* -------------------------------------------*/
+
+
+
+
+
+
+
+
+
 
 server.use(function(req, res, next) {
     var context = app.createContext();
