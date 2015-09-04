@@ -16,9 +16,6 @@ var app = require('./app');
 var HtmlComponent = require('./components/Html');
 var { createElementWithContext } = require('fluxible-addons-react');
 var htmlComponent = React.createFactory(HtmlComponent);
-var multer = require('multer');
-var upload = multer({});
-var bodyParser = require('body-parser');
 var env = process.env.NODE_ENV;
 
 var debug = debugLib('fluxible-template');
@@ -28,27 +25,6 @@ var debug = debugLib('fluxible-template');
 var server = express();
 server.use('/public', express.static(path.join(__dirname, '/public')));
 server.use(compression());
-
-
-
-
-
-
-
-
-/* Register http actions */
-/* TODO: THIS SHOULD NOT BE ON THE FRONT END. SHOULD MOVE TO BACK END */
-server.post('/api/upload', require('./httpActions/upload.js'));
-/* -------------------------------------------*/
-
-
-
-
-
-
-
-
-
 
 server.use(function(req, res, next) {
     var context = app.createContext();
