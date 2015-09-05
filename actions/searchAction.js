@@ -1,43 +1,16 @@
 module.exports = function(context, payload, callback) {
 
-    // Hard Coded
-    payload.results = [
-        {
-            "name": "The Tommy Show",
-            "description": "It's the Tommy Show!",
-            "user": "admin",
-            "episodes": [
-                {
-                    "name": "Meet Tommy",
-                    "description": "He's Great!",
-                    "url": "sampleUrl"
-                },
-                {
-                    "name": "Tommy goes to school",
-                    "description": "Will his teacher be mean?",
-                    "url": "sampleUrl"
-                }
-            ]
-        },
-        {
-            "name": "The Tommy Show",
-            "description": "It's the Tommy Show!",
-            "user": "admin",
-            "episodes": [
-                {
-                    "name": "Meet Tommy",
-                    "description": "He's Great!",
-                    "url": "sampleUrl"
-                },
-                {
-                    "name": "Tommy goes to school",
-                    "description": "Will his teacher be mean?",
-                    "url": "sampleUrl"
-                }
-            ]
+    context.service.read('search', {q: payload.term}, {}, function(err, results) {
+        if (err) {
+            // TODO: Handle error
+            console.log("Error on search action");
+            console.log(err);
+        } else {
+            console.log("Success on search action");
+            console.log(results);
+            payload.results = results;
+            context.dispatch("SEARCH_RESULTS_RECEIVED", payload);
+            callback();
         }
-    ]
-
-    context.dispatch("SEARCH_RESULTS_RECEIVED", payload);
-    callback();
+    });
 };

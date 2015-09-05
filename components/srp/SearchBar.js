@@ -14,9 +14,10 @@ var SearchBar = React.createClass({
         });
     },
     search: function(e) {
+        console.log("It's now here");
         e.preventDefault();
         this.context.executeAction(navigateAction, {
-            url: '/search?q=' + React.findDOMNode(this.refs.search).value.trim()
+            url: "/search?q=" + React.findDOMNode(this.refs.search).value.trim()
         });
     },
     render: function() {
