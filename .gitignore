@@ -1,6 +1,6 @@
 public/js
 node_modules
-configs/externalRoutes.js
+configs/externalRoutes.json
 
 # Logs and databases #
 ######################
