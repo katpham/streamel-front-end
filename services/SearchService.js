@@ -4,7 +4,6 @@ var route = require('../configs/externalRoutes.json').streamelApi;
 module.exports = {
     name: "search",
     read: function(req, resource, params, config, callback) {
-        console.log("Service called");
         request
             .get(route + '/series/search')
             .query({ q: params.q })

@@ -29,7 +29,13 @@ server.use('/public', express.static(path.join(__dirname, '/public')));
 server.use(compression());
 
 server.use(function(req, res, next) {
-    var context = app.createContext();
+    var context = app.createContext({
+        req: req,
+        xhrContext: { // Used as query params for all XHR calls
+            lang: 'en-US', // make sure XHR calls receive the same lang as the initial request
+            _csrf: 'a3fc2d' // CSRF token to validate on the server using your favorite library
+        }
+    });
 
     debug('Executing navigate action');
     context.getActionContext().executeAction(navigateAction, {
