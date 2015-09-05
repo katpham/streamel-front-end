@@ -17,6 +17,7 @@ var HtmlComponent = require('./components/Html');
 var { createElementWithContext } = require('fluxible-addons-react');
 var htmlComponent = React.createFactory(HtmlComponent);
 var env = process.env.NODE_ENV;
+var bodyParser = require('body-parser');
 
 var debug = debugLib('fluxible-template');
 
@@ -27,6 +28,8 @@ app.getPlugin('FetchrPlugin').registerService(require('./services/SearchService'
 var server = express();
 server.use('/public', express.static(path.join(__dirname, '/public')));
 server.use(compression());
+server.use(bodyParser.json());
+server.use(app.getPlugin('FetchrPlugin').getXhrPath(), app.getPlugin('FetchrPlugin').getMiddleware());
 
 server.use(function(req, res, next) {
     var context = app.createContext({
