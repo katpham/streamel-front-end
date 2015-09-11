@@ -13,8 +13,8 @@ var Header = React.createClass({
                         <h1>Streamel</h1>
                     </NavLink>
                 </div>
-                <div className="streamel-header-item">
-                    <SearchBar />
+                <div className="streamel-header-item streamel-header-item-searchbar">
+                    <SearchBar className="searchBar" />
                 </div>
                 {/*<nav className="streamel-header-item">
                     <CircleButton action={NavigateAction} payload={{method:"GET", url:"/resume"}} actionId="NavigateBlog">

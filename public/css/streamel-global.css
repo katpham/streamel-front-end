@@ -21,6 +21,8 @@ h1 {
 .no-link a:link, .no-link a:visited, .no-link a:hover, .no-link a:active {
     text-decoration: none;
 }
+
+
 .streamel-site-container {
     position: relative;
     bottom 0px;
@@ -38,7 +40,6 @@ h1 {
 }
 .streamel-header-item {
     height: 100%;
-    overflow: hidden;
     padding-left: 30px;
     padding-right: 30px;
 }
@@ -127,23 +128,33 @@ h1 {
 
 
 
+@media screen and (max-width: 800px) {
+    /* Header */
+    .streamel-header-item-searchbar {
+        position: absolute;
+        right: 0px;
+        left: 0px;
+        bottom: 0px;
+        height: 25px;
+        padding: 0px;
+    }
+    .streamel-search-bar {
+        border-radius: 0px !important;
+        margin: 0px !important;
+        width: 100% !important;
+    }
+    .streamel-header {
+        height: 95px;
+    }
+
+    /* SRP */
+    .streamel-search-content {
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .streamel-search-item {
+        border-radius: 0px;
+    }
 
 
-
-
-
-
-
-.streamel-searchbar {
-
-}
-
-.streamel-search-input {
-	width: 55%;
-	height: 25px;
-}
-
-.streamel-search-button {
-	height: 25px;
-	width: 80px;
 }

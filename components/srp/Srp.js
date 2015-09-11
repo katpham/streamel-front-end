@@ -8,7 +8,6 @@ var Srp = React.createClass({
         return (
             <div className="streamel-search-content">
                 {this.props.results.map(function(result) { 
-                    console.log("Here");
                     return (
                     <div className="streamel-search-item">
                         <h1>{result.name}</h1>
