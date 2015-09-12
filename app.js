@@ -1,11 +1,6 @@
 var Fluxible = require('fluxible');
 var Application = require('./components/Application');
-var ApplicationStore = require('./stores/ApplicationStore');
-var RouteStore = require('./stores/RouteStore');
-var PlayStore = require('./stores/PlayStore');
-var SearchStore = require('./stores/SearchStore');
 var actionMonitor = require('fluxible-plugin-action-monitor');
-
 var fetchr = require('fluxible-plugin-fetchr');
 var fetchrInstance = fetchr({
     xhrPath: '/api'
@@ -20,10 +15,10 @@ app.plug(actionMonitor.actionMonitor);
 app.plug(fetchrInstance);
 
 // register stores
-app.registerStore(RouteStore);
-app.registerStore(ApplicationStore);
-app.registerStore(PlayStore);
-app.registerStore(SearchStore);
+app.registerStore(require('./stores/RouteStore'));
+app.registerStore(require('./stores/ApplicationStore'));
+app.registerStore(require('./stores/SearchStore'));
+app.registerStore(require('./stores/SeriesStore'));
 
 app.registerStore(actionMonitor.actionMonitorStore);
 

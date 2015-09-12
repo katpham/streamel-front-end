@@ -135,7 +135,7 @@ h1 {
         right: 0px;
         left: 0px;
         bottom: 0px;
-        height: 25px;
+        height: 45px;
         padding: 0px;
     }
     .streamel-search-bar {
@@ -144,7 +144,7 @@ h1 {
         width: 100% !important;
     }
     .streamel-header {
-        height: 95px;
+        height: 115px;
     }
 
     /* SRP */

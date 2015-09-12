@@ -10,7 +10,7 @@ var Html = React.createClass({
                 <title>{this.props.context.getStore(ApplicationStore).getPageTitle()}</title>
                 <meta name="viewport" content="width=device-width, user-scalable=no" />
                 <link rel="stylesheet" href="/public/css/streamel-global.css" />
-                <link rel="stylesheet" href="/public/css/video-player.css" />
+                {/*<link rel="stylesheet" href="/public/css/video-player.css" />*/}
                 <link rel="stylesheet" href="/public/css/oui.css" />
             </head>
             <body>

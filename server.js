@@ -23,6 +23,7 @@ var debug = debugLib('fluxible-template');
 
 /* Regeister Services */
 app.getPlugin('FetchrPlugin').registerService(require('./services/SearchService'));
+app.getPlugin('FetchrPlugin').registerService(require('./services/SeriesService'));
 
 
 var server = express();

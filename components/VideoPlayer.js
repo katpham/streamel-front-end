@@ -2,24 +2,12 @@ var React = require('react');
 
 var VideoPlayer = React.createClass({
 	render: function() {
+        console.log(this.props.episode);
 		return (
-			<div className="video-player-container">
-				<video id="video-player" width="100%" height="100%">
-					{this.props.config.playlist.map(function(item){
-						return (
-							<source key={item.id} src={item.url} type={item.type} />
-						);
-					})}
+			<div>
+				<video width="100%" height="100%">
+					<source src={this.props.episode.url} type="video/mp4" />
 				</video>
-
-				<div id="video-player-controls" className="video-player-controls">
-					<div className="seek-bar">
-						<div className="seek-bar-lower" />
-					</div>
-					<div>
-
-					</div>
-				</div>
 			</div>	
 		);
 	},

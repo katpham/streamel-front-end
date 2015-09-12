@@ -19,7 +19,7 @@ module.exports = {
         page: 'watch',
         title: 'Watch',
         handler: require('../components/watch/Watch'),
-        action: require('../actions/getPlayerConfig')
+        action: require('../actions/watch/getSeries')
     },
     search: {
         path: '/search',
@@ -27,6 +27,6 @@ module.exports = {
         page: 'search',
         title: 'Search',
         handler: require('../components/srp/Srp'),
-        action: require('../actions/searchFromUrlAction')
+        action: require('../actions/search/searchFromUrlAction')
     }
 };

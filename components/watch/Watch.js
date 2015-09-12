@@ -1,42 +1,36 @@
 var React = require('react');
 var VideoPlayer = require('../VideoPlayer');
 var connectToStores = require('fluxible-addons-react').connectToStores;
-var PlayStore = require('../../stores/PlayStore');
+var SeriesStore = require('../../stores/SeriesStore');
 
 var Watch = React.createClass({
     render: function() {
-
-    	var playerConfig = {
-    		playlist: [
-	    		{
-					id: "1",
-					name: "sample2",
-					url: "sample2.mp4",
-					type: "video/mp4"
-				},
-				{
-					id: "2",
-					name: "sample1",
-					url: "sample1.mp4",
-					type: "video/mp4"
-				},
-			]
-		};
-
-        return (
-            <div>
-                <VideoPlayer config={this.props.playerConfig}/>
-            </div>
-        );
+        var content = (<div></div>);
+        if (this.props.id) {
+            var currentEpisode = this.props.episodes[this.props.currentEpisode]
+            content = (
+                <div>
+                    <VideoPlayer episode={currentEpisode}/>
+                    <div style={{padding: "20px"}}>
+                        <h1>{currentEpisode.name}</h1>
+                        <p>{currentEpisode.description}</p>
+                    </div>
+                </div>
+            )
+        }
+        return content;
     }
 });
 
 module.exports = connectToStores(
 	Watch,
-	[PlayStore],
+	[SeriesStore],
 	function(context, props) {
 		return {
-			playerConfig: context.getStore(PlayStore).getConfig()
+            id: context.getStore(SeriesStore).getId(),
+			episodes: context.getStore(SeriesStore).getEpisodes(),
+            info: context.getStore(SeriesStore).getInfo(),
+            currentEpisode: context.getStore(SeriesStore).getCurrentEpisode()
 		}
 	}
 );

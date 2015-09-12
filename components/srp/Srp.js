@@ -2,6 +2,7 @@
 var React = require('react');
 var connectToStores = require("fluxible-addons-react").connectToStores;
 var SearchStore = require('../../stores/SearchStore');
+var NavLink = require('fluxible-router').NavLink;
 
 var Srp = React.createClass({
     render: function() {
@@ -9,10 +10,12 @@ var Srp = React.createClass({
             <div className="streamel-search-content">
                 {this.props.results.map(function(result) { 
                     return (
-                    <div className="streamel-search-item">
-                        <h1>{result.name}</h1>
-                        <p>{result.description}</p>
-                    </div>
+                    <NavLink href={"/watch?id=" + result.id}>
+                        <div className="streamel-search-item no-link">
+                            <h1>{result.name}</h1>
+                            <p>{result.description}</p>
+                        </div>
+                    </NavLink>
                 )})}
             </div>
         );
