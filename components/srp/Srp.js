@@ -3,6 +3,7 @@ var React = require('react');
 var connectToStores = require("fluxible-addons-react").connectToStores;
 var SearchStore = require('../../stores/SearchStore');
 var NavLink = require('fluxible-router').NavLink;
+var FilmResult = require('./FilmResult');
 
 var Srp = React.createClass({
     render: function() {
@@ -11,10 +12,9 @@ var Srp = React.createClass({
                 {this.props.results.map(function(result) { 
                     return (
                     <NavLink href={"/watch?id=" + result.id}>
-                        <div className="streamel-search-item no-link">
-                            <h1>{result.name}</h1>
-                            <p>{result.description}</p>
-                        </div>
+                        <FilmResult title={result.name} description={result.description}
+                            poster={result.thumbnail}
+                            thumbnail="http://nerdreactor.com/wp-content/uploads/2015/08/heart-of-america-movie-poster.jpg" />
                     </NavLink>
                 )})}
             </div>

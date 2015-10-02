@@ -87,20 +87,11 @@ h1 {
 .streamel-home-content {
     position: relative;
     min-height: 700px;
-    padding: 20px;
-    background-image: url('/public/images/StarBurst.png');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-.streamel-home-text {
-    text-align: center;
-}
-.streamel-home-text h1 {
-    font-size: 60px;
+.streamel-home-banner {
+    background-color:  #222;
+    height: 300px;
+
 }
 
 /* Search */
@@ -111,22 +102,77 @@ h1 {
 }
 
 .streamel-search-item {
-    background-color: #EEE;
+    background-color: #FFF;
     position: relative;
     margin: auto;
     margin-top: 15px;
     margin-bottom: 15px;
     max-width: 1200px;
     padding: 20px;
-    min-height: 200px;
-    padding-right: 100px;
-    padding-left: 100px;
-    border-radius: 100px;
+    height: 250px;
+    padding-right: 125px;
+    padding-left: 125px;
+    border-radius: 125px;
     box-sizing: border-box;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+    transition-property: color, background-color;
+    background-size: contain;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s;
+}
+.streamel-search-item:hover {
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
 }
 
+.streamel-search-item-thumbnail {
+    position: absolute;
+    height: 250px;
+    width: 445px;
+    right: 0px;
+    top: 0px;
+    background-size: cover;
+}
+.streamel-search-item-thumbnail-overlay {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    right: 0px;
+    left: 0px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
 
-
+.streamel-search-item-poster {
+    position: absolute;
+    height: 210px;
+    width: 142px;
+    left: 125px;
+    top: 20px;
+    border-radius: 5px;
+    background-size: cover;
+}
+.streamel-search-item-title {
+    position: absolute;
+    left: 297px;
+    top: 20px;
+    right: 400px;
+    text-overflow: ellipsis;
+}
+.streamel-search-item-title h1 {
+    margin-top: 0px;
+    
+}
+.streamel-search-item-description {
+    position: absolute;
+    left: 297px;
+    right: 400px;
+    bottom: 20px;
+    top: 70px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 
 @media screen and (max-width: 800px) {
     /* Header */
