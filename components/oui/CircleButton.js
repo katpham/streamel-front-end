@@ -1,6 +1,6 @@
 var React = require('react');
 var connectToStores = require("fluxible-addons-react").connectToStores;
-var ActionMonitorStore = require('fluxible-plugin-action-monitor').actionMonitorStore;
+//var ActionMonitorStore = require('fluxible-plugin-action-monitor').actionMonitorStore;
 
 var CircleButton = React.createClass({
     propTypes: {
@@ -12,7 +12,7 @@ var CircleButton = React.createClass({
         executeAction: React.PropTypes.func.isRequired,
     }, 
     navigate: function() {
-        this.context.executeAction(this.props.action, this.props.payload, this.props.actionId);
+        this.context.executeAction(this.props.action, this.props.payload);
     },
     render: function() {
         var loading;
@@ -27,7 +27,9 @@ var CircleButton = React.createClass({
     }
 });
 
-module.exports = connectToStores(
+module.exports = CircleButton;
+
+/*module.exports = connectToStores(
     CircleButton,
     [ActionMonitorStore],
     function (context, props) {
@@ -35,4 +37,4 @@ module.exports = connectToStores(
             currentlyLoading: context.getStore(ActionMonitorStore).getActionsInProgress()
         }
     }
-);
+*/
