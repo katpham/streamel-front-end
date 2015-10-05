@@ -2,6 +2,7 @@ var React = require('react');
 var VideoPlayer = require('../VideoPlayer');
 var connectToStores = require('fluxible-addons-react').connectToStores;
 var SeriesStore = require('../../stores/SeriesStore');
+var Comments = require('./Comments');
 
 var Watch = React.createClass({
     render: function() {
@@ -15,6 +16,7 @@ var Watch = React.createClass({
                         <h1>{currentEpisode.name}</h1>
                         <p>{currentEpisode.description}</p>
                     </div>
+                    <Comments />
                 </div>
             )
         }
