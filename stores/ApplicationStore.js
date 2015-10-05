@@ -1,4 +1,4 @@
-var createStore = require('fluxible-app/utils/createStore');
+var createStore = require('fluxible/addons/createStore');
 var routesConfig = require('../configs/routes');
 var RouteStore = require('./RouteStore');
 
